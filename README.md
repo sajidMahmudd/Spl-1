@@ -1,6 +1,28 @@
 # Spl-1
 AlgoGenie
 
+## Working milestone - 4 November 2026
+
+Merge Sort now runs with validated console input, a built-in example, and separate
+sortedness/value-preservation checks. Learning replay and comparison are **not yet implemented**.
+
+Open a PowerShell terminal in this folder:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\build.ps1
+.\build\algogenie.exe
+```
+
+Choose `2` for the example. To run tests:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\build.ps1 -Test
+```
+
+See [First-target walkthrough](docs/first-target.md) for the code reading order,
+hand trace, supported inputs, and next milestone. The original proposal below
+describes the full planned application.
+
 See How an Algorithm Makes Its Decisions.
 
 An Offline C++ Algorithm Learning and Experimentation Tool

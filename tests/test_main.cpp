@@ -1,5 +1,7 @@
 #include <iostream>
 #include <climits>
+#include <sstream>
+#include "../src/io/Input.h"
 #include "../src/algorithms/sorting/MergeSort.h"
 #include "../src/verify/Sorting.h"
 
@@ -20,6 +22,20 @@ void testSort(const int* input, const int* expected, int size) {
     check(matches, "known expected output");
 }
 int main() {
+    IntArray parsed(3);
+    check(parseIntegers("-3 0 +5", parsed) && parsed[0] == -3 && parsed[2] == 5, "signed input");
+    check(!parseIntegers("1 2", parsed), "missing value");
+    check(!parseIntegers("1 2 3 4", parsed), "extra value");
+    check(!parseIntegers("1 2x 3", parsed), "invalid token");
+    check(!parseIntegers("1 2 99999999999999999999999", parsed), "integer overflow");
+    check(!parseIntegers("1 2 3.0", parsed), "decimal rejected");
+    check(!parseIntegers("1 2 -", parsed), "bare sign rejected");
+    check(parseIntegers("-2147483648 0 2147483647", parsed), "32-bit boundaries");
+    check(!parseIntegers("-2147483649 0 1", parsed), "negative overflow");
+    std::istringstream lines("abcdefghij\n2\n");
+    char line[5]; bool tooLong;
+    check(readLine(lines, line, 5, tooLong) && tooLong, "long line rejected");
+    check(readLine(lines, line, 5, tooLong) && !tooLong && line[0] == '2', "line recovery");
     testSort(nullptr, nullptr, 0);
     const int single[] = {7}; testSort(single, single, 1);
     const int mixed[] = {5, 1, 5, -2, 0}, sorted[] = {-2, 0, 1, 5, 5};
