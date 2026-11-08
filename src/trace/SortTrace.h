@@ -1,8 +1,13 @@
 #pragma once
 #include <cassert>
 
-enum class SortEventKind { Split, BaseCase, BeginMerge, Compare, BufferWrite, CopyBack, MergeDone, Finished };
+enum class SortEventKind {
+    Split, BaseCase, BeginMerge, Compare, BufferWrite, CopyBack, MergeDone, Finished,
+    ChoosePivot, ComparePivot, PartitionSwap, KeepRight, PivotPlaced, PartitionDone
+};
 struct SortEvent {
+    // Merge: middle is the split. Quick partition: middle is the <= boundary.
+    // Quick events: index/value identify the pivot; left/right identify operands.
     SortEventKind kind;
     int begin, middle, end, depth;
     int left = -1, right = -1, index = -1, value = 0;

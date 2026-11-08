@@ -29,6 +29,10 @@ public:
                 buffer[event.index] = event.value; bufferValid[event.index] = 1;
             } else if (event.kind == SortEventKind::CopyBack) {
                 values[event.index] = event.value;
+            } else if (event.kind == SortEventKind::PartitionSwap || event.kind == SortEventKind::PivotPlaced) {
+                const int temporary = values[event.left];
+                values[event.left] = values[event.right];
+                values[event.right] = temporary;
             }
         }
         position_ = target;
