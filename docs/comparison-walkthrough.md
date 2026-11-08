@@ -113,4 +113,6 @@ powershell -ExecutionPolicy Bypass -File .\scripts\build.ps1 -Test -Release
 powershell -ExecutionPolicy Bypass -File .\scripts\smoke-test.ps1 -Executable .\build\algogenie-release.exe
 ```
 
-Next: save/load the exact input and export these reports so the demo can be reproduced.
+Save/load and report export are now implemented. Use main menu 4 for cases and 5 for
+the latest verified report. Export reuses the actual measured results; it does not rerun
+the algorithms or fabricate a second set of timing samples. See sorting-demo.md.

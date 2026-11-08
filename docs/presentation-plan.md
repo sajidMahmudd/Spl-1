@@ -1,12 +1,12 @@
 # Presentation preparation: 12 November 2026
 
-Plan revised 8 November. Target, not a claim that pending work is implemented.
+Plan revised 9 November. Targets below distinguish completed sorting from pending work.
 
 | Date | Build target | Understanding / presentation work |
 | --- | --- | --- |
 | Nov 8 | Merge Sort replay, then begin Quicksort | Hand-trace Merge Sort; explain ownership and replay |
-| Nov 9 | Quicksort learning and sorting comparison | Explain partition/pivot, define counters; collect real outputs |
-| Nov 10 | Finish sorting save/load and reports; activity pair only if the sorting workflow is stable | Check full demo and record actual completed features |
+| Nov 9 | Sorting workflow completed; begin activity pair after demo/understanding review | Explain partition/pivot, replay, file validation and counters |
+| Nov 10 | Activity pair if feasible, retaining stable sorting release | Check full demo and record actual completed features |
 | Nov 11 | Freeze features; fixes and clean rebuild | Create slides from working software; rehearse demo and viva |
 | Nov 12 | Present checked version | Offline examples and backup screenshots |
 
@@ -18,7 +18,7 @@ Four out of ten solvers means 40% of solver count, not a measured 40% of all sof
 Slide outline: problem/users; final scope and actual progress; architecture;
 Learn demonstration; Compare evidence; verification/Git history; remaining work.
 Use authentic screenshots, commit dates and measured results. Do not present planned
-activity selection, comparison or persistence as already implemented.
+activity selection or other pending algorithms as already implemented.
 
 ## 8 November milestone
 
@@ -29,5 +29,13 @@ Quicksort was subsequently added with last-element-pivot Lomuto partition, pivot
 boundary display, real/no-op swaps, replay and invariant checks. Both algorithms now
 support Learn and result-only Run. Comparison was subsequently added with fresh input
 copies, defined operation counts, seven untraced timings per algorithm and a median.
-Debug and Release builds and console workflows were checked. Persistence and export
-remain pending; the entire promised sorting workflow is not yet finished.
+Debug and Release builds and console workflows were checked.
+
+## 9 November sorting completion
+
+Implemented strict versioned TXT save/load and TXT/CSV export from Learn, Run and
+Compare. Fresh-session loading works for both algorithms. CSV is read back in tests.
+Malformed files leave current state intact, successful loads invalidate stale reports,
+existing output files are preserved, and file errors are shown clearly.
+The promised sorting workflow is complete within the documented size/trace limits.
+Two out of ten featured solvers are complete; this is not a claim of 40% overall completion.

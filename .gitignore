@@ -1,3 +1,7 @@
 /build/
 *.exe
 *.o
+/saved/*
+!/saved/.gitkeep
+/reports/*
+!/reports/.gitkeep

@@ -1,13 +1,18 @@
 # Spl-1
 AlgoGenie
 
-## Working milestone - 8 November 2026
+## Sorting milestone complete - 9 November 2026
 
 Merge Sort and last-element-pivot Quicksort run with validated input, examples,
 result checks and learning replay. Inspect merge buffers or pivot/partition/swapping
 decisions with next/back/restart/end controls. Compare mode runs both algorithms on
-independent copies and reports defined counts and separate timing. Saved cases and
-report export are **not yet implemented**.
+independent copies and reports defined counts and separate timing. Both algorithms now
+support the full sorting workflow: custom/loaded input, validation, Learn replay,
+result verification, Compare, TXT case save/load, and TXT/CSV report export.
+
+Limits: Learn up to 30 elements; Run/Compare/case files up to 100; 20,000 trace events.
+Tiny-input timing can be unresolved on this toolchain and is labelled honestly.
+Activity selection, coin change and graph algorithms remain planned.
 
 Open a PowerShell terminal in this folder:
 
@@ -20,11 +25,15 @@ Choose `1` for Learn, then algorithm `1` (Merge Sort) or `2` (Quicksort),
 then input `2` for the small `[4,1,3]` lesson.
 Use `N`, `B`, `R`, `E`, `Q` followed by Enter. Choose `2` from the main menu for result-only mode.
 Choose `3` for Compare, then `4` for the sorted-input lesson (12 vs 28 value comparisons).
+Choose `4` to save/load a TXT case. Choose input `7` in any mode to reuse the current case.
+Choose `5` to export the latest verified result as TXT or CSV. Save files inside
+`saved/` and reports inside `reports/`; use a new name to preserve existing files.
 To run tests:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\build.ps1 -Test
 powershell -ExecutionPolicy Bypass -File .\scripts\smoke-test.ps1
+powershell -ExecutionPolicy Bypass -File .\scripts\persistence-test.ps1
 ```
 
 See [Learning-mode walkthrough](docs/learning-mode-walkthrough.md) for the code reading order,
@@ -32,6 +41,8 @@ hand trace and viva questions, [Quicksort walkthrough](docs/quicksort-walkthroug
 and [November 12 preparation plan](docs/presentation-plan.md).
 See [Comparison walkthrough](docs/comparison-walkthrough.md) for counting rules,
 timing boundaries and the optimized build command.
+Use [Sorting supervisor demo](docs/sorting-demo.md) for the complete demonstration and
+[Case/report formats](docs/file-formats.md) to understand persistence.
 The original proposal below
 describes the full planned application.
 
@@ -39,7 +50,7 @@ See How an Algorithm Makes Its Decisions.
 
 An Offline C++ Algorithm Learning and Experimentation Tool
 
-goGenie is an offline C++17 application designed to help students understand how algorithms work internally through step-by-step execution replay, solution verification, and algorithm comparison.
+AlgoGenie is an offline C++17 application designed to help students understand how algorithms work internally through step-by-step execution replay, solution verification, and algorithm comparison.
 
 Rather than simply displaying the final output, AlgoGenie aims to show the decisions an algorithm makes, how its internal state changes, and why a particular result is produced.
 

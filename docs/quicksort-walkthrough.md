@@ -107,4 +107,4 @@ forward/back/restart, recorder overflow, sorted/reversed/equal inputs, and both 
 
 Compare mode has now been added: see comparison-walkthrough.md for identical original
 inputs, documented operation counts and separate untraced timing. Saved cases and export
-are still pending.
+are now implemented; see sorting-demo.md and file-formats.md.

@@ -9,8 +9,7 @@ inline void comparisonRow(const char* label, T merge, T quick) {
     std::cout << "  " << std::left << std::setw(27) << label << std::right
               << std::setw(16) << merge << std::setw(16) << quick << '\n';
 }
-inline bool showComparison(const IntArray& original) {
-    const auto report = algogenie::compareSorts(original);
+inline bool showComparison(const IntArray& original, const algogenie::SortComparison& report) {
     std::cout << "\n====================================================================\n"
               << "  ALGOGENIE / COMPARE / SORTING\n"
               << "  Same input. Independent working copies. Checked results.\n"
