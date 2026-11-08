@@ -25,4 +25,6 @@ activity selection, comparison or persistence as already implemented.
 Implemented recorded Merge Sort learning, current range/depth, buffer display,
 next/back/restart/end/menu, bounds, trace-limit handling and replay tests.
 Console output intentionally retains prior frames in scrollback for review.
-Current algorithm support: Merge Sort only. Comparison and persistence remain pending.
+Quicksort was subsequently added with last-element-pivot Lomuto partition, pivot/scan/
+boundary display, real/no-op swaps, replay and invariant checks. Both algorithms now
+support Learn and result-only Run. Comparison and persistence remain pending.

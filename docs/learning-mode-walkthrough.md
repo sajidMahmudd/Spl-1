@@ -10,7 +10,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\build.ps1
 .\build\algogenie.exe
 ```
 
-Enter 1 for Learn, then 2 for [4,1,3]. Each command needs Enter.
+Enter 1 for Learn, then 1 for Merge Sort, then 2 for [4,1,3]. Each command needs Enter.
 N: next; B: back; R: restart; E: end; Q: return to menu. At the main menu, 0 exits.
 The example has 23 recorded events. Step zero is the original input.
 Use N several times, B once, N again, R, then E. At the end expect [1,3,4]
@@ -77,7 +77,7 @@ Next seeks to k+1. Back seeks to k-1. Restart seeks to zero. The sorting functio
 not called by these controls. The current event supplies the range and depth labels.
 This implementation shows the current recursion depth, not a complete call-stack panel.
 
-src/ui/MergeViewer.h turns that state into a terminal screen and handles commands.
+src/ui/SortViewer.h turns that state into a terminal screen and handles commands.
 src/main.cpp connects input, execution, verification and the selected mode.
 
 ## Six viva questions to practise aloud

@@ -11,7 +11,10 @@ try {
         $target = 'build/tests.exe'
     }
     & g++ -std=c++17 -Wall -Wextra -Wpedantic -g @sources -o $target
-    if ($LASTEXITCODE -ne 0) { throw 'Compilation failed.' }
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host 'If AlgoGenie is open, press Q in replay, then 0 in the main menu before rebuilding.'
+        throw 'Compilation failed. Read the compiler message above.'
+    }
     Write-Host "Built $target"
     if ($Test) {
         & ".\$target"

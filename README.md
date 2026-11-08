@@ -3,9 +3,10 @@ AlgoGenie
 
 ## Working milestone - 8 November 2026
 
-Merge Sort runs with validated input, examples, result checks and recorded learning
-replay. Inspect splits, comparisons, buffer writes and copy-back with next/back/restart
-and end controls. Quicksort, comparison, saved cases and reports are **not yet implemented**.
+Merge Sort and last-element-pivot Quicksort run with validated input, examples,
+result checks and learning replay. Inspect merge buffers or pivot/partition/swapping
+decisions with next/back/restart/end controls. Comparison, saved cases and reports
+are **not yet implemented**.
 
 Open a PowerShell terminal in this folder:
 
@@ -14,7 +15,8 @@ powershell -ExecutionPolicy Bypass -File .\scripts\build.ps1
 .\build\algogenie.exe
 ```
 
-Choose `1` for Learn, then `2` for the small `[4,1,3]` lesson.
+Choose `1` for Learn, then algorithm `1` (Merge Sort) or `2` (Quicksort),
+then input `2` for the small `[4,1,3]` lesson.
 Use `N`, `B`, `R`, `E`, `Q` followed by Enter. Choose `2` from the main menu for result-only mode.
 To run tests:
 
@@ -24,7 +26,8 @@ powershell -ExecutionPolicy Bypass -File .\scripts\smoke-test.ps1
 ```
 
 See [Learning-mode walkthrough](docs/learning-mode-walkthrough.md) for the code reading order,
-hand trace and viva questions, and [November 12 preparation plan](docs/presentation-plan.md).
+hand trace and viva questions, [Quicksort walkthrough](docs/quicksort-walkthrough.md),
+and [November 12 preparation plan](docs/presentation-plan.md).
 The original proposal below
 describes the full planned application.
 

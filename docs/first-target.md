@@ -17,9 +17,10 @@ powershell -ExecutionPolicy Bypass -File .\scripts\build.ps1
 .\build\algogenie.exe
 ```
 
-In the current menu choose 2 (Run), then 3 (duplicate example).
+In the current menu choose 2 (Run), then 1 (Merge Sort), then 3 (duplicate example).
 Expected output: `[ 1 3 3 5 8 ]` and two PASS labels.
-For custom input choose 2 (Run), then 1. Size zero is supported. Use 0 at the main menu to exit.
+For custom input choose 2 (Run), then 1 (Merge Sort), then 1 (custom input).
+Size zero is supported. Use 0 at the main menu to exit.
 
 Run the checks:
 
