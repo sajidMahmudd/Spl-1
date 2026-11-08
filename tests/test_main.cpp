@@ -24,11 +24,13 @@ void testSort(const int* input, const int* expected, int size) {
 #include "replay_checks.h"
 #include "quick_checks.h"
 #include "comparison_checks.h"
+#include "file_checks.h"
 
 int main() {
     replayChecks();
     quickChecks();
     comparisonChecks();
+    fileChecks();
     IntArray parsed(3);
     check(parseIntegers("-3 0 +5", parsed) && parsed[0] == -3 && parsed[2] == 5, "signed input");
     check(!parseIntegers("1 2", parsed), "missing value");
