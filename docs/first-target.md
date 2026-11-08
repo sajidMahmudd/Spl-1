@@ -1,5 +1,8 @@
 # First target: Merge Sort with verified results
 
+Historical milestone from November 4. Learning replay was added November 8;
+see learning-mode-walkthrough.md for the current lesson and controls.
+
 Implemented: manually owned integer array with deep copies, handwritten Merge Sort,
 strict integer input, sample case, repeated runs, and separate result checks.
 The integer array has a fixed size selected at runtime; growable storage is future work.
@@ -14,8 +17,9 @@ powershell -ExecutionPolicy Bypass -File .\scripts\build.ps1
 .\build\algogenie.exe
 ```
 
-Choose 2 to try the example. Expected output: `[ 1 3 3 5 8 ]` and two PASS labels.
-Choose 1 for your own array. Size zero is supported. Use 0 to exit.
+In the current menu choose 2 (Run), then 3 (duplicate example).
+Expected output: `[ 1 3 3 5 8 ]` and two PASS labels.
+For custom input choose 2 (Run), then 1. Size zero is supported. Use 0 at the main menu to exit.
 
 Run the checks:
 
