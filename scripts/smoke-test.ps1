@@ -31,5 +31,17 @@ try {
     if ($LASTEXITCODE -ne 0 -or ([regex]::Matches($output, 'Values preserved : PASS')).Count -ne 2) {
         throw 'Switching algorithms / empty Quicksort lesson failed.'
     }
-    Write-Host 'PASS: both algorithms, replay navigation, result mode, validation, empty input and EOF.'
+    $compare = @('3','4','3','2','3','1','0','1','2','2','e','q','0') -join "`n"
+    $output = ($compare | & $Executable) -join "`n"
+    if ($LASTEXITCODE -ne 0 -or $output -notmatch 'Value comparisons\s+12\s+28' -or
+        $output -notmatch 'Value comparisons\s+3\s+2' -or $output -notmatch 'Value comparisons\s+0\s+0' -or
+        $output -notmatch 'Main-array writes\s+24\s+0' -or $output -notmatch 'Median of 7 runs' -or
+        ([regex]::Matches($output, 'Matching sorted outputs: PASS')).Count -ne 3 -or
+        $output -notmatch 'PLACE PIVOT|COMPLETE') { throw 'Comparison / reset / switching modes failed.' }
+    $patterns = @('3','5','3','6','0') -join "`n"
+    $output = ($patterns | & $Executable) -join "`n"
+    if ($LASTEXITCODE -ne 0 -or ([regex]::Matches($output, 'Matching sorted outputs: PASS')).Count -ne 2) {
+        throw 'Reversed and equal presets failed.'
+    }
+    Write-Host 'PASS: Learn, Run, Compare, presets, navigation, validation, empty input and EOF.'
 } finally { Pop-Location }

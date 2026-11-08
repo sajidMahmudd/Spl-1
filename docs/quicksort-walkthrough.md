@@ -105,5 +105,6 @@ Tests check known answers, integer limits, all short arrays over {-1,0,1}, the p
 invariant, pivot placement, deterministic replay, every-frame value preservation,
 forward/back/restart, recorder overflow, sorted/reversed/equal inputs, and both menus.
 
-Next milestone: Compare mode using identical original inputs, documented operation
-counts and separate untraced timing. Comparison, saved cases and export are still pending.
+Compare mode has now been added: see comparison-walkthrough.md for identical original
+inputs, documented operation counts and separate untraced timing. Saved cases and export
+are still pending.

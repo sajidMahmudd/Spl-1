@@ -27,4 +27,7 @@ next/back/restart/end/menu, bounds, trace-limit handling and replay tests.
 Console output intentionally retains prior frames in scrollback for review.
 Quicksort was subsequently added with last-element-pivot Lomuto partition, pivot/scan/
 boundary display, real/no-op swaps, replay and invariant checks. Both algorithms now
-support Learn and result-only Run. Comparison and persistence remain pending.
+support Learn and result-only Run. Comparison was subsequently added with fresh input
+copies, defined operation counts, seven untraced timings per algorithm and a median.
+Debug and Release builds and console workflows were checked. Persistence and export
+remain pending; the entire promised sorting workflow is not yet finished.

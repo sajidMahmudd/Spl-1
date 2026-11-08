@@ -5,8 +5,9 @@ AlgoGenie
 
 Merge Sort and last-element-pivot Quicksort run with validated input, examples,
 result checks and learning replay. Inspect merge buffers or pivot/partition/swapping
-decisions with next/back/restart/end controls. Comparison, saved cases and reports
-are **not yet implemented**.
+decisions with next/back/restart/end controls. Compare mode runs both algorithms on
+independent copies and reports defined counts and separate timing. Saved cases and
+report export are **not yet implemented**.
 
 Open a PowerShell terminal in this folder:
 
@@ -18,6 +19,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\build.ps1
 Choose `1` for Learn, then algorithm `1` (Merge Sort) or `2` (Quicksort),
 then input `2` for the small `[4,1,3]` lesson.
 Use `N`, `B`, `R`, `E`, `Q` followed by Enter. Choose `2` from the main menu for result-only mode.
+Choose `3` for Compare, then `4` for the sorted-input lesson (12 vs 28 value comparisons).
 To run tests:
 
 ```powershell
@@ -28,6 +30,8 @@ powershell -ExecutionPolicy Bypass -File .\scripts\smoke-test.ps1
 See [Learning-mode walkthrough](docs/learning-mode-walkthrough.md) for the code reading order,
 hand trace and viva questions, [Quicksort walkthrough](docs/quicksort-walkthrough.md),
 and [November 12 preparation plan](docs/presentation-plan.md).
+See [Comparison walkthrough](docs/comparison-walkthrough.md) for counting rules,
+timing boundaries and the optimized build command.
 The original proposal below
 describes the full planned application.
 

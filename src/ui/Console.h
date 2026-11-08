@@ -20,13 +20,21 @@ inline bool readNumber(const char* prompt, int minimum, int maximum, int& result
     }
 }
 inline bool readCase(IntArray& original, int maximum) {
-    std::cout << "\n  CHOOSE INPUT\n  1  Your own array\n  2  Small lesson: 4 1 3\n  3  Duplicate example: 8 3 5 3 1\n";
+    std::cout << "\n  CHOOSE INPUT\n  1  Your own array\n  2  Small lesson: 4 1 3\n"
+              << "  3  Duplicate example: 8 3 5 3 1\n  4  Sorted: 1 2 3 4 5 6 7 8\n"
+              << "  5  Reversed: 8 7 6 5 4 3 2 1\n  6  Equal: 5 5 5 5 5 5 5 5\n";
     int choice, count;
-    if (!readNumber("  Choose > ", 1, 3, choice)) return false;
+    if (!readNumber("  Choose > ", 1, 6, choice)) return false;
     if (choice != 1) {
         const int small[] = {4, 1, 3}, duplicates[] = {8, 3, 5, 3, 1};
-        count = choice == 2 ? 3 : 5; original = IntArray(count);
-        for (int i = 0; i < count; ++i) original[i] = choice == 2 ? small[i] : duplicates[i];
+        count = choice == 2 ? 3 : choice == 3 ? 5 : 8; original = IntArray(count);
+        for (int i = 0; i < count; ++i) {
+            if (choice == 2) original[i] = small[i];
+            else if (choice == 3) original[i] = duplicates[i];
+            else if (choice == 4) original[i] = i + 1;
+            else if (choice == 5) original[i] = 8 - i;
+            else original[i] = 5;
+        }
         return true;
     }
     std::cout << "  Supported size: 0 to " << maximum << " elements.\n";

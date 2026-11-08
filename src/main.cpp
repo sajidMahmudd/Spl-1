@@ -1,19 +1,27 @@
 #include "algorithms/sorting/MergeSort.h"
 #include "algorithms/sorting/QuickSort.h"
 #include "ui/SortViewer.h"
+#include "ui/ComparisonView.h"
 
 int main() {
     std::cout << "\n====================================================================\n"
               << "                           ALGOGENIE\n"
               << "            See how an algorithm makes its decisions.\n"
               << "====================================================================\n"
-              << "  WORKING: Merge Sort + Quicksort, replay, result verification\n"
-              << "  NEXT: comparison, followed by saved cases/reports\n";
+              << "  WORKING: Merge Sort + Quicksort, Learn, Compare, checks\n"
+              << "  NEXT: saved cases and report export\n";
     while (true) {
         std::cout << "\n  1  LEARN / Sorting step by step\n"
-                  << "  2  RUN / Sorted result only\n  0  Exit\n\n";
+                  << "  2  RUN / Sorted result only\n"
+                  << "  3  COMPARE / Merge Sort vs Quicksort\n  0  Exit\n\n";
         int choice;
-        if (!readNumber("  Choose > ", 0, 2, choice) || choice == 0) break;
+        if (!readNumber("  Choose > ", 0, 3, choice) || choice == 0) break;
+        if (choice == 3) {
+            IntArray original;
+            if (!readCase(original, 100)) break;
+            if (!showComparison(original)) return 1;
+            continue;
+        }
         std::cout << "\n  CHOOSE ALGORITHM\n  1  Merge Sort\n  2  Quicksort / Lomuto / last-element pivot\n";
         int algorithm;
         if (!readNumber("  Choose > ", 1, 2, algorithm)) break;
