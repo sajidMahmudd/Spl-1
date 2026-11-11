@@ -3,6 +3,7 @@
 #include "ui/SortViewer.h"
 #include "ui/ComparisonView.h"
 #include "ui/FileMenu.h"
+#include "ui/ActivityMenu.h"
 
 int main() {
     std::cout << "\n====================================================================\n"
@@ -14,15 +15,20 @@ int main() {
     IntArray current;
     bool haveCurrent = false;
     algogenie::RunReport latest;
+    algogenie::ActivityCase currentActivity;
+    bool haveActivity = false;
+    algogenie::ActivityReport latestActivity;
     while (true) {
         std::cout << "\n  1  LEARN / Sorting step by step\n"
                   << "  2  RUN / Sorted result only\n"
                   << "  3  COMPARE / Merge Sort vs Quicksort\n"
                   << "  4  CASE FILES / Save or load TXT\n"
-                  << "  5  EXPORT / Latest TXT or CSV report\n  0  Exit\n\n";
+                  << "  5  EXPORT / Latest sorting TXT or CSV report\n"
+                  << "  6  ACTIVITY SELECTION / Greedy + DP lab\n  0  Exit\n\n";
         if (haveCurrent) std::cout << "  Current case: " << current.size() << " elements (input option 7).\n";
         int choice;
-        if (!readNumber("  Choose > ", 0, 5, choice) || choice == 0) break;
+        if (!readNumber("  Choose > ", 0, 6, choice) || choice == 0) break;
+        if (choice == 6) { algogenie::activityMenu(currentActivity, haveActivity, latestActivity); continue; }
         if (choice == 4) { caseMenu(current, haveCurrent, latest); continue; }
         if (choice == 5) { exportMenu(latest); continue; }
         if (choice == 3) {
