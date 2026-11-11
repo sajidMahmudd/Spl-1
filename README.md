@@ -1,7 +1,26 @@
 # Spl-1
 AlgoGenie
 
-## Sorting milestone complete - 9 November 2026
+## Activity Selection milestone - 12 November 2026
+
+Main menu **6** opens the new Activity Selection lab: **Earliest-finish Greedy + DP**.
+Both support Learn (N/B/R/E/Q), Run, checked Compare with separate timings,
+custom/preset/loaded inputs, TXT case save/load, and TXT/CSV report export.
+The unweighted problem maximizes activity count; start < finish and touching endpoints
+are allowed. IDs preserve original input row identity. Learn limit: 20; other modes: 100.
+
+Quick demo: main **6**, Compare **3**, proposal preset **2**. Both select IDs **1 3 4**,
+count **3**; compatibility checks are **3 vs 6**, excluding shared preparation.
+The preparation is a handwritten O(n²) insertion sort; on presorted input the solvers
+are O(n) Greedy and O(n²) DP. This distinction is shown in the application and reports.
+
+Read [Activity Selection file-by-file walkthrough](docs/activity-selection-walkthrough.md)
+for tonight's reading order, a two-minute demo, recurrence, proof and viva questions.
+Run `powershell -ExecutionPolicy Bypass -File .\scripts\activity-test.ps1` after building.
+Four of ten featured solvers are implemented. Coin change and graph solvers remain planned.
+Sorting menu numbers and existing workflows remain available.
+
+## Sorting milestone complete - 9 November 2026 (previous milestone)
 
 Merge Sort and last-element-pivot Quicksort run with validated input, examples,
 result checks and learning replay. Inspect merge buffers or pivot/partition/swapping
@@ -12,7 +31,7 @@ result verification, Compare, TXT case save/load, and TXT/CSV report export.
 
 Limits: Learn up to 30 elements; Run/Compare/case files up to 100; 20,000 trace events.
 Tiny-input timing can be unresolved on this toolchain and is labelled honestly.
-Activity selection, coin change and graph algorithms remain planned.
+At that milestone, activity selection, coin change and graph algorithms remained planned.
 
 Open a PowerShell terminal in this folder:
 
